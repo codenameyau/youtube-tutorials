@@ -1,12 +1,20 @@
 _format_version: "2.1"
 
 services:
-  - name: gist-service
+  - name: github-service
     url: https://api.github.com
     routes:
-      - name: gists-route
+      - name: github-route
         paths:
-          - /gists
+          - /github
+
+  - name: spacex-service
+    url: https://api.spacexdata.com/v4
+    routes:
+      - name: spacex-routes
+        paths:
+          - /spacex
+
   - name: hello-service
     url: http://host.docker.internal:8002
     routes:
