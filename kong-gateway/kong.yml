@@ -15,16 +15,16 @@ services:
         paths:
           - /spacex
 
-  - name: hello-service
+  - name: docker-service
     url: http://host.docker.internal:8002
     routes:
-      - name: hello-route
+      - name: docker-route
         paths:
-          - /hello
+          - /docker
 
 plugins:
   - name: rate-limiting
-    service: hello-service
+    service: docker-service
     config:
       minute: 5
       policy: local
